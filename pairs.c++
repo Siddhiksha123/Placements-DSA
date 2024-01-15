@@ -10,7 +10,20 @@ int main()
     // cout << p.first << " " << p.second << endl;
 
     // can be copied like a normal integer
-    pair<int, string> p1 = p;
+    pair<int, string> &p1 = p;
     p1.first = 3;
-    cout << p1.first << " " << p1.second << endl;
+    cout << p.first << " " << p.second << endl;
+
+    // what was the need of pairs in stl-->> --> to maintain relation between two different types of data types
+    int a[] = {1, 2, 3};
+    int b[] = {2, 3, 4};
+    pair<int, int> p_array[3];
+    p_array[0] = {1, 2};
+    p_array[1] = {2, 3};
+    p_array[3] = {3, 4};
+    swap(p_array[0], p_array[3]);
+    for (int i = 0; i < 3; i++)
+    {
+        cout << p_array[i].first << " " << p_array[i].second << endl;
+    }
 }
